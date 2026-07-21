@@ -1,10 +1,12 @@
 {
-  "name": "ai-studio-applet",
+  "name": "life-oil-iran-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_ENV=production next build",
+    "build": "opennextjs-cloudflare build",
+    "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "preview": "opennextjs-cloudflare build && wrangler dev",
     "start": "next start",
     "lint": "eslint .",
     "clean": "next clean"
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "^1.20.2",
+    "wrangler": "^3.100.0",
     "@tailwindcss/postcss": "4.1.11",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",

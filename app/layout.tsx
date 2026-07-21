@@ -4,8 +4,6 @@ import { AppProvider } from '@/components/providers';
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
-export const runtime = 'edge';
-
 const vazir = Vazirmatn({ subsets: ['arabic'], variable: '--font-vazir' });
 
 
