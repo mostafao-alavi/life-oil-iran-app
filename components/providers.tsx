@@ -51,7 +51,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   return (
     <AppContext.Provider value={{ user, login, logout, org }}>
-      {children}
+      {isLoaded ? children : null}
     </AppContext.Provider>
   );
 }
