@@ -1,5 +1,5 @@
 'use client';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { ArrowUpRight, ArrowDownRight, CreditCard, Gift, Ticket, History } from 'lucide-react';
 import Link from 'next/link';

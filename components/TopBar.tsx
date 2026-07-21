@@ -1,6 +1,6 @@
 'use client';
 import { Bell } from 'lucide-react';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import Image from 'next/image';
 
 export default function TopBar() {

@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { Search } from 'lucide-react';
 import Link from 'next/link';

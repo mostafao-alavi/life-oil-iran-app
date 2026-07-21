@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { Building2, ShieldCheck } from 'lucide-react';
 

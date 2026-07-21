@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { Search, SlidersHorizontal, MapPin, Phone, Clock, Percent, Navigation, Map, Star } from 'lucide-react';
 import Image from 'next/image';

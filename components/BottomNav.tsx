@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Search, Gift, CreditCard, User } from 'lucide-react';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 
 export default function BottomNav() {
   const pathname = usePathname();

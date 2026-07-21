@@ -1,5 +1,5 @@
 'use client';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { User as UserIcon, Settings, LogOut, ChevronLeft, Shield, Bell, HelpCircle, FileText } from 'lucide-react';
 import Image from 'next/image';

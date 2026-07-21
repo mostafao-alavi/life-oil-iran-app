@@ -1,5 +1,5 @@
 'use client';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { ArrowLeft, HeartPulse, Plane, ShoppingBag, Stethoscope } from 'lucide-react';
 import Image from 'next/image';

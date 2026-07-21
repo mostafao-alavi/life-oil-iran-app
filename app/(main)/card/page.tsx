@@ -1,5 +1,5 @@
 'use client';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import { motion } from 'motion/react';
 import { QrCode, ShieldCheck, Download, Share2 } from 'lucide-react';
 import Image from 'next/image';

@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react';
 import { Vazirmatn } from 'next/font/google';
-import { AppProvider } from '@/lib/store';
+import { AppProvider } from '@/components/providers';
+import NoSSR from '@/components/NoSSR';
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
@@ -19,13 +21,15 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({children}: {children: ReactNode}) {
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body className="font-vazir bg-[#F8FAFC] text-slate-900 suppressHydrationWarning" suppressHydrationWarning>
-        <AppProvider>
-          {children}
-        </AppProvider>
+        <NoSSR>
+          <AppProvider>
+            {children}
+          </AppProvider>
+        </NoSSR>
       </body>
     </html>
   );

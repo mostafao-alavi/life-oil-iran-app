@@ -1,41 +1,22 @@
 'use client';
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { ORGANIZATIONS } from './constants';
+import type { ReactNode } from 'react';
+import { useState, useEffect } from 'react';
+import { AppContext, User } from '@/lib/store-context';
+import { ORGANIZATIONS } from '@/lib/constants';
 
-export type User = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  nationalId: string;
-  phone: string;
-  membershipCode: string;
-  city: string;
-  organizationId: string;
-  avatar: string;
-  level: string;
-  points: number;
-  walletBalance: number;
-};
-
-type AppContextType = {
-  user: User | null;
-  login: (phone: string, membershipCode: string) => void;
-  logout: () => void;
-  org: typeof ORGANIZATIONS['default'];
-};
-
-const AppContext = createContext<AppContextType | undefined>(undefined);
-
-export function AppProvider({ children }: { children: React.ReactNode }) {
+export function AppProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('app_user');
-    if (stored) {
-      setUser(JSON.parse(stored));
-    }
-    setIsLoaded(true);
+    const init = () => {
+      const stored = localStorage.getItem('app_user');
+      if (stored) {
+        setUser(JSON.parse(stored));
+      }
+      setIsLoaded(true);
+    };
+    init();
   }, []);
 
   const login = (phone: string, membershipCode: string) => {
@@ -74,9 +55,3 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     </AppContext.Provider>
   );
 }
-
-export const useAppStore = () => {
-  const context = useContext(AppContext);
-  if (!context) throw new Error('useAppStore must be used within AppProvider');
-  return context;
-};

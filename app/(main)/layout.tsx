@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/lib/store-context';
 import BottomNav from '@/components/BottomNav';
 import TopBar from '@/components/TopBar';
 
